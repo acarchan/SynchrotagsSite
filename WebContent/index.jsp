@@ -17,7 +17,7 @@ equals(""))
 					out.println("Your username is: " + request.getParameter("txtName"));
 			}
 		*/
-		out.println("bidule :" . request.getParameter("form"));
+		out.println("bidule :"+request.getParameter("form"));
 		%>
 	</body>
 </html>
