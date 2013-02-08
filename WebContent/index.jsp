@@ -17,6 +17,9 @@ equals(""))
 					out.println("Your username is: " + request.getParameter("txtName"));
 			}
 		*/
+		for(Enumeration request.getParameterNames() : bidule){
+			out.println(bidule.toString);
+			}
 		out.println("bidule :"+request.getParameter("form"));
 		%>
 	</body>
