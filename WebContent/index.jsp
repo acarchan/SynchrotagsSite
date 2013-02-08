@@ -8,19 +8,11 @@
 </head>
 <body>
 		<%
-	/*		if(request.getParameter("form")
- != null){
-				if(request.getParameter("txtName").
-equals(""))
-					out.println("<html><font color=red>Please enter your name.</font></html>");
-				else
-					out.println("Your username is: " + request.getParameter("txtName"));
+			String ParameterNames = "";
+			for(Enumeration e = request.getParameterNames(); e.hasMoreElements(); ){
+				ParameterNames = (String)e.nextElement();
+				out.println(ParameterNames + "<br/>");
 			}
-		*/
-		for(Enumeration request.getParameterNames() : bidule){
-			out.println(bidule.toString);
-			}
-		out.println("bidule :"+request.getParameter("form"));
 		%>
 	</body>
 </html>
