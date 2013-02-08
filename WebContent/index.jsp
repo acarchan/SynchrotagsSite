@@ -7,25 +7,8 @@
 <title>Hourra</title>
 </head>
 <body>
-		<form method="post">
-			<table border="0" cellpadding="0" 
-cellspacing="0">
-				<tr>
-					<td>Enter your name:
- </td>
-					<td><input type="text"
- size="20" name="txtName" /></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td><input type="submit" 
-name="B1" value="Submit" /><input type="reset" name="B2" value=
-"Reset" /></td>
-				</tr>
-			</table>
-		</form>
 		<%
-			if(request.getParameter("txtName")
+	/*		if(request.getParameter("form")
  != null){
 				if(request.getParameter("txtName").
 equals(""))
@@ -33,6 +16,8 @@ equals(""))
 				else
 					out.println("Your username is: " + request.getParameter("txtName"));
 			}
+		*/
+		out.println("bidule :" . request.getParameter("form"));
 		%>
 	</body>
 </html>
