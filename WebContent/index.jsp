@@ -8,5 +8,6 @@
 </head>
 <body>
 <p>This is SPARTA!</p>
+<% System.out.println("bidule"); %>
 </body>
 </html>
