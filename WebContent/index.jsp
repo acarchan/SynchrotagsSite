@@ -10,9 +10,9 @@
 <body>
 		<%
 			String ParameterNames = "";
-			for(Enumeration e = request.getParameterNames(); e.hasMoreElements(); ){
-				ParameterNames = (String)e.nextElement();
-				out.println(ParameterNames + "<br/>");
+			for(Enumeration<String> e = request.getParameterNames(); e.hasMoreElements(); ){
+				ParameterNames = e.nextElement();
+				out.println("derp " + ParameterNames + "<br/>");
 			}
 		%>
 	</body>
