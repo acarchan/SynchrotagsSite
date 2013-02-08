@@ -29,11 +29,9 @@ name="B1" value="Submit" /><input type="reset" name="B2" value=
  != null){
 				if(request.getParameter("txtName").
 equals(""))
-					out.println("<html><font 
-color=red>Please enter your name.</font></html>");
+					out.println("<html><font color=red>Please enter your name.</font></html>");
 				else
-					out.println("Your username 
-is: " + request.getParameter("txtName"));
+					out.println("Your username is: " + request.getParameter("txtName"));
 			}
 		%>
 	</body>
