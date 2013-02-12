@@ -1,34 +1,48 @@
-<?xml version="1.0" ?> 
+<?xml version="1.0" ?>
 <project name="AntExample1" default="war">
+	<path id="catalina-ant-classpath">
+		<fileset dir="lib">
+			<include name="catalina-ant.jar" />
+			<include name="tomcat-coyote.jar" />
+			<include name="tomcat-util.jar" />
+		</fileset>
+	</path>
+	<taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="catalina-ant-classpath"/>
+	<taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" classpathref="catalina-ant-classpath"/>
 
 	<path id="compile.classpath">
 		<fileset dir="WebContent/WEB-INF/lib">
-			<include name="*.jar"/>
+			<include name="*.jar" />
 		</fileset>
 	</path>
-	
+
 	<target name="init">
-		<mkdir dir="build/classes"/>
+		<mkdir dir="build/classes" />
 		<mkdir dir="dist" />
 	</target>
-	
-	<target name="compile" depends="init" >
+
+	<target name="compile" depends="init">
 		<javac destdir="build/classes" debug="true" srcdir="src">
-			<classpath refid="compile.classpath"/>
+			<classpath refid="compile.classpath" />
 		</javac>
 	</target>
-	
+
 	<target name="war" depends="compile">
 		<war destfile="dist/site.war" webxml="WebContent/WEB-INF/web.xml">
-			<fileset dir="WebContent"/>
-			<lib dir="WebContent/WEB-INF/lib"/>
-			<classes dir="build/classes"/>
+			<fileset dir="WebContent" />
+			<lib dir="WebContent/WEB-INF/lib" />
+			<classes dir="build/classes" />
 		</war>
 	</target>
-	
+
 	<target name="clean">
 		<delete dir="dist" />
 		<delete dir="build" />
 	</target>
-	
+
+	<target name="deploy" depends="war">
+		<deploy url="http://h.n0m.fr:9000/manager/text" username="tomcatmgr"
+			password="s3cret" path="/siteB" update="true"
+			war="site.war" />
+	</target>
 </project>
