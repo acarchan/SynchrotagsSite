@@ -43,6 +43,6 @@
 	<target name="deploy" depends="war">
 		<deploy url="http://h.n0m.fr:9000/manager/text" username="tomcatmgr"
 			password="s3cret" path="/siteB" update="true"
-			war="site.war" />
+			war="dist/site.war" />
 	</target>
 </project>
